@@ -8,9 +8,9 @@
 <h1>All Products list</h1>
 <br>
 
-<ul th:each="product : ${products}">
+<ul>
 <!--    <li th:text="${item.title} - ${item.cost}"/></li>-->
-    <li th:text="${product.title}"/>
+    <li th:each="product : ${products}" th:text="${product.title}"/>
 </ul>
 <!--<table>-->
 <!--    <tr th:each="product : ${products}">-->

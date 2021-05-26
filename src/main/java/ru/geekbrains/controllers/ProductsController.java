@@ -10,7 +10,7 @@ import ru.geekbrains.entities.Product;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
+//@RequestMapping("/product")
 public class ProductsController {
     private ProductsService productsService;
 
@@ -26,8 +26,10 @@ public class ProductsController {
         return "index";
     }
 
-    @GetMapping("/{id}")
-    public String showProductById(Model uiModel, @PathVariable(value = "id") int id) {
+//    @GetMapping("/{id}")
+    @GetMapping("/product")
+
+    public String showProductById(Model uiModel, @PathVariable(name = "id") int id) {
         Product product = productsService.getProductById(id);
         uiModel.addAttribute("product", product);
         return "product";
